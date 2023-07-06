@@ -152,8 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 955daf2cc3faf42419b30385b2e99f63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TamX: 16
-  TamZ: 16
+  TamX: 100
+  TamZ: 100
   TamY: 1
   Bloco: {fileID: 5463570601697081549, guid: 020f6f03c1f8ae44e91396e291b0bf20, type: 3}
   x: 0
@@ -162,11 +162,14 @@ MonoBehaviour:
   auxAlturaMaxima: 0
   resolucao: 20
   seed: 0
-  player: {fileID: 0}
+  player: {fileID: 1163527000}
   chunksFora: []
   chunksGame: []
   areaChunks: 0
   prefabChunk: {fileID: 0}
+  lookRadius: {x: 0, y: 0, z: 0}
+  objetosNaArea: []
+  cam: {fileID: 963194227}
 --- !u!4 &8181009
 Transform:
   m_ObjectHideFlags: 0
@@ -174,13 +177,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8181007}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.57594, y: -6.170677, z: -3.7590604}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 20, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 1163527005}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &324999218
 GameObject:
@@ -471,6 +474,7 @@ GameObject:
   - component: {fileID: 1163527002}
   - component: {fileID: 1163527001}
   - component: {fileID: 1163527006}
+  - component: {fileID: 1163527007}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -571,6 +575,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 963194228}
+  - {fileID: 8181009}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -592,3 +597,18 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1163527007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163527000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5fa59c1b6fc3fc408ae468279d1d7db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  centro: {x: 0, y: 0, z: 0}
+  tamanho: {x: 32, y: 128, z: 32}
+  camera: {fileID: 963194227}
