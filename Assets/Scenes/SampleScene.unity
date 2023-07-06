@@ -123,6 +123,65 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &8181007
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8181009}
+  - component: {fileID: 8181008}
+  m_Layer: 0
+  m_Name: ControllerChunk
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &8181008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8181007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 955daf2cc3faf42419b30385b2e99f63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TamX: 16
+  TamZ: 16
+  TamY: 1
+  Bloco: {fileID: 5463570601697081549, guid: 020f6f03c1f8ae44e91396e291b0bf20, type: 3}
+  x: 0
+  z: 0
+  alturaMaxima: 10
+  auxAlturaMaxima: 0
+  resolucao: 20
+  seed: 0
+  player: {fileID: 0}
+  chunksFora: []
+  chunksGame: []
+  areaChunks: 0
+  prefabChunk: {fileID: 0}
+--- !u!4 &8181009
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8181007}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 17.57594, y: -6.170677, z: -3.7590604}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &324999218
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,7 +384,6 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
-  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -399,25 +457,6 @@ Transform:
   m_Father: {fileID: 1163527005}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &963194229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 955daf2cc3faf42419b30385b2e99f63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TamX: 100
-  TamZ: 100
-  Bloco: {fileID: 5463570601697081549, guid: 020f6f03c1f8ae44e91396e291b0bf20, type: 3}
-  x: 0
-  z: 0
-  alturaMaxima: 10
-  resolucao: 20
 --- !u!1 &1163527000
 GameObject:
   m_ObjectHideFlags: 0
