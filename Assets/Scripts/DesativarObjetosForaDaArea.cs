@@ -1,52 +1,52 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class DesativarObjetosForaDaArea : MonoBehaviour
 {
-    public Vector3 centro = Vector3.zero;
     public Vector3 tamanho = Vector3.one;
-    private List<GameObject> objetosNaArea = new List<GameObject>();
+    public List<GameObject> objetosNaArea = new List<GameObject>();
 
-    public Camera camera; // Referência à câmera que não deve ser desativada
+    public GameObject player;
+
+    public static DesativarObjetosForaDaArea instance;
+
+    private MeshRenderer colliderMesh;
+
+
+    private void Awake()
+    {
+        if (instance == null) instance = this;
+    }
+
+
+    private void Start()
+    {
+    }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireCube(centro, tamanho);
-    }
-
-    private void Start()
-    {
-        AtualizarObjetosNaArea();
+        Gizmos.DrawWireCube(player.transform.position, tamanho);
     }
 
     private void Update()
     {
-        DesativarObjetosForaArea();
-    }
-
-    private void AtualizarObjetosNaArea()
-    {
+        
         objetosNaArea.Clear();
-        Collider[] colliders = Physics.OverlapBox(centro, tamanho / 2f);
+        Collider[] colliders = Physics.OverlapBox(player.transform.position, tamanho / 2f);
         foreach (Collider collider in colliders)
         {
+            colliderMesh = collider.gameObject.GetComponent<MeshRenderer>();
             objetosNaArea.Add(collider.gameObject);
+
+            if (objetosNaArea.Contains(collider.gameObject)) {
+                colliderMesh.enabled = true;
+            }
+
+            
         }
+
+        
     }
 
-    private void DesativarObjetosForaArea()
-    {
-        foreach (GameObject obj in GameObject.FindObjectsOfType<GameObject>())
-        {
-            if (obj != camera.gameObject && !objetosNaArea.Contains(obj))
-            {
-                obj.SetActive(false);
-            }
-            else
-            {
-                obj.SetActive(true);
-            }
-        }
-    }
 }
